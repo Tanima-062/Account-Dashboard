@@ -36,8 +36,8 @@
             {{ group.children[1].total_amount }}
         </div>
     </div>
-    <div v-if="group.children.length > 1 && group.children[1].accounts">
-        <div class="table-body-row flex items-center py-4 px-1" v-for="account in group.children[1].accouts" :key="account.id" :account="account">
+    <div v-if="group.children.length > 1 && group.children[1].accounts.length > 0">
+        <div class="table-body-row flex items-center py-4 px-1" v-for="account in group.children[1].accounts" :key="account.id" :account="account">
             <div class="column w-[30%] text-base text-18">
                 
             </div>
@@ -52,7 +52,7 @@
             </div>
         </div>
     </div>
-    <div v-if="group.children.length > 0 && group.children.accounts">
+    <div v-if="group.children.length > 0 && group.children.accounts.length > 0">
         <div class="table-body-row flex items-center py-4 px-1" v-for="account in group.children[0].accounts" :key="account.id" :account="account">
             <div class="column w-[30%] text-base text-18">
                 
@@ -68,7 +68,7 @@
             </div>
         </div>
     </div>
-    <div v-if="group.accounts">
+    <div v-if="group.accounts.length > 0">
         <div class="table-body-row flex items-center py-4 px-1" v-for="account in group.accounts" :key="account.id" :account="account">
             <div class="column w-[30%] text-base text-18">
                 {{ account.title }}
