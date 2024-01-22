@@ -19,5 +19,6 @@ Route::group(['middleware' => ['guest']], function () {
     Route::get('/', [AccountController::class, 'index'])->name('accounts.index');
     Route::get('/create', [AccountController::class, 'create'])->name('accounts.create');
     Route::post('/save', [AccountController::class, 'store'])->name('accounts.store');
+    Route::get('/report', [AccountController::class, 'report'])->name('accounts.report');
 });
 

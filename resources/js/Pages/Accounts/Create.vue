@@ -83,8 +83,6 @@ import TextInput from "../../Components/Form/TextInput.vue";
 import SelectOption from "../../Components/Form/SelectOption.vue";
 import PrimaryButton from "../../Components/PrimaryButton.vue";
 import Cancel from "../../Components/Form/Cancel.vue"
-import { reactive, ref } from "vue";
-import axios from "axios";
 import { Inertia } from "@inertiajs/inertia";
 import { useForm } from '@inertiajs/inertia-vue3';
 

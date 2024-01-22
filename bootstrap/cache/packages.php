@@ -41,6 +41,13 @@
       0 => 'Carbon\\Laravel\\ServiceProvider',
     ),
   ),
+  'nevadskiy/laravel-tree' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Nevadskiy\\Tree\\TreeServiceProvider',
+    ),
+  ),
   'nunomaduro/collision' => 
   array (
     'providers' => 

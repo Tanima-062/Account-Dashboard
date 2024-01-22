@@ -52,15 +52,13 @@
                 <AccountIcon />
                 <span class="hide-on-collapse whitespace-nowrap" style="word-wrap:break-word;white-space: normal;">Account</span>
             </SidebarMenuItem>
-
-            <!-- <SidebarMenuItem
-                routeName="categories.index"
-                activeText="Categories"
-                v-if="hasAnyPermissions(['categories.view', 'categories.edit'])"
+            <SidebarMenuItem
+                routeName="accounts.report"
+                activeText="Report"
             >
-                <CategoryIcon />
-                <span class="hide-on-collapse whitespace-nowrap" style="word-wrap:break-word;white-space: normal;">{{ $t("Categories") }}</span>
-            </SidebarMenuItem> -->
+                <ReportIcon />
+                <span class="hide-on-collapse whitespace-nowrap" style="word-wrap:break-word;white-space: normal;">Report</span>
+            </SidebarMenuItem>
 
         </div>
     </nav>
@@ -72,11 +70,11 @@
 import LeftCollapseIcon from "../Icons/LeftCollapseIcon.vue";
 import RightCollapseIcon from "../Icons/RightCollapseIcon.vue";
 import ManIcon from "../Icons/Man.vue";
-import AccountIcon from "../Icons/CategoryIcon.vue";
+import AccountIcon from "../Icons/AccountIcon.vue";
 import { ref } from "@vue/reactivity"
 
 import SidebarMenuItem from "./SidebarMenuItem.vue";
-import CategoryIcon from "../Icons/CategoryIcon.vue";
+import ReportIcon from "../Icons/SupplierIcon.vue";
 
 const sidebarFullView = ref(true);
 const collapseSidebar = () => sidebarFullView.value = false
