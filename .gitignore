@@ -3,8 +3,6 @@
 /public/storage
 /storage/upload
 /storage/*.key
-/storage/app/temp
-/storage/app/backup-temp
 /vendor
 .env
 .env.backup
@@ -19,3 +17,7 @@ yarn.lock
 *.lock
 package-lock.json
 .history
+
+/storage/debugbar
+/public/js/
+/public/css/

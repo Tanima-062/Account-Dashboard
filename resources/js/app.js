@@ -3,12 +3,12 @@ import './bootstrap';
 
 import Layout from './Layouts/Default.vue'
 import VueClickAway from "vue3-click-away";
-import VCalendar from 'v-calendar';
-import 'v-calendar/dist/style.css';
 
 
 import { createApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/inertia-vue3";
+import { ZiggyVue } from "ziggy";
+import { Ziggy } from "./ziggy";
 
 
 createInertiaApp({
@@ -19,10 +19,11 @@ createInertiaApp({
     },
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
+            .mixin({ methods: { route: window.route } })
+            .use(ZiggyVue, Ziggy)
             .use(plugin)
             .use(VueClickAway)
-            .use(VCalendar, {})
-            .mixin({ methods: { route: window.route } })
             .mount(el);
     },
 });
+

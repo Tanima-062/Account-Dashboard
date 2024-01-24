@@ -40,11 +40,6 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-
-        'appusers' => [
-            'driver' => 'sanctum',
-            'provider' => 'appusers'
-        ],
     ],
 
     /*
@@ -68,10 +63,6 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
-        ],
-        'appusers' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\MobileAppUser::class,
         ],
 
         // 'users' => [
@@ -98,12 +89,6 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
-            'table' => 'password_resets',
-            'expire' => 60,
-            'throttle' => 60,
-        ],
-        'appusers' => [
-            'provider' => 'appusers',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

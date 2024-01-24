@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require("path");
 
 /*
  |--------------------------------------------------------------------------
@@ -12,10 +13,19 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .extract()
     .vue(3)
-    // .sass('resources/css/app.scss', 'public/css')
+    .webpackConfig({
+        resolve: {
+            alias: {
+                "@": path.resolve(__dirname, "resources/js"),
+            },
+        },
+    })
+    .extract()
     .postCss("resources/css/input.css", "public/css/app.css", [
         require("tailwindcss"),
-    ])
-    .version();
+    ]);
+
+    mix.alias({
+        ziggy: path.resolve("vendor/tightenco/ziggy/dist/vue"),
+    });

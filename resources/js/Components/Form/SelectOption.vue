@@ -63,11 +63,9 @@
 </template>
 
 <script setup>
-import { defaults } from "lodash";
 import { v4 as uuid } from "uuid";
 import { computed, ref, useAttrs } from "vue";
 
-import {trans} from 'laravel-vue-i18n'
 const attrs = useAttrs();
 const emit = defineEmits(["update:modelValue"]);
 const props = defineProps({
@@ -115,7 +113,7 @@ const showOptions = ref(false);
 const selected = computed(()=> {
     const value = props.options.find(item=>item[props.value_name] == attrs.modelValue);
     if(value){
-        return trans(value[props.label_name])
+        return value[props.label_name]
     }
 
     return null;
